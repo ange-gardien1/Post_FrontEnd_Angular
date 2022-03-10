@@ -8,28 +8,20 @@ import { tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  baseURL: string = "https://localhost:5001/api/auth";
+  baseURL: string = "http://localhost:3000/api/users";
 
   constructor(private http: HttpClient) { }
 
-  // Login Function
-  // Component needs to pass an email and password as an object
-  // On success, the component will get back a token that needs to get stored
-  login(email: string, password: string){
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append('email', email);
-    queryParams = queryParams.append('password', password);
-
-    return this.http.get(`${this.baseURL}/login`, { params: queryParams })
-      .pipe(tap((response: any) => {
-        localStorage.setItem('myCoffeeToken', response.jwt);
-      }));
+  signUp(newUser: User){
+    return this.http.post(this.baseURL, newUser);
   }
 
-  // Signup function
-  // Component needs to pass a User object with the collected form data
-  // On success, the component will get a 200 status
-  signUp(newUser: User){
-    return this.http.post(`${this.baseURL}/register`, newUser);
+  login(username: string, password: string){
+    let request = { username, password };
+
+    return this.http.post(`${this.baseURL}/login`, request)
+      .pipe(tap((response: any) => {
+        localStorage.setItem('myCoffeeToken', response.token);
+      }));
   }
 }

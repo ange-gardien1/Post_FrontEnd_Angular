@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  email: string = '';
+  username: string = '';
   password: string = '';
 
   constructor(private userService: UserService, private router: Router) { }
@@ -18,13 +18,12 @@ export class SignInComponent implements OnInit {
   }
 
   signin(){
-    this.userService.login(this.email, this.password).subscribe((response:any) => {
-      console.log(response);
-      this.router.navigate(['coffee']);
+    this.userService.login(this.username, this.password).subscribe((response:any) => {
+        this.router.navigateByUrl('/coffee');
     }, error => {
-      console.log('Error: ', error);
-      window.alert('Unsuccessful Login');
-      this.router.navigateByUrl('/signin');
+        console.log('Error: ', error);
+        window.alert('Unsuccessful Login');
+        this.router.navigateByUrl('/signin');
     });
   }
 }
