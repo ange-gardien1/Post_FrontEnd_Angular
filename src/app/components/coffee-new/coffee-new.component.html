@@ -1,0 +1,13 @@
+<form (ngSubmit)="addCoffee()">
+    <h1>ADD NEW COFFEE</h1>
+    <span>Coffee Name  </span>
+    <input placeholder="Enter coffee name" type="text" name="coffee" [(ngModel)]="newCoffee.name"><br><br>
+    <span>Description </span>
+    <input placeholder="Enter description" type="text" name="desc" [(ngModel)]="newCoffee.description"><br><br>
+    <span>Price  </span>
+    <input placeholder="Enter price" type="number" name="price" [(ngModel)]="newCoffee.price"><br><br>
+
+    <button>
+        Create Coffee
+    </button>
+</form>
