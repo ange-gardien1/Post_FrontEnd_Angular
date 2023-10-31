@@ -1,0 +1,20 @@
+<h1 class="special-font">User Profile<span *ngIf="profileUser">:
+    {{profileUser?.username}}</span>
+</h1>
+
+<p><span>Name:</span> {{profileUser?.firstName}} {{profileUser?.lastName}}</p>
+<p><span>Location:</span> {{profileUser?.city}}, {{profileUser?.state}}</p>
+<p><span>Profile Created:</span> {{profileUser?.createdOn}}</p>
+
+
+<div *ngIf="userTweets">
+    <h2 class="special-font">Tweets</h2>
+
+    <app-tweet-list [tweetList]="userTweets" [canEdit]="myProfile"
+        (refreshFeed)="getPosts(profileUser?.userId ?? 0)"></app-tweet-list>
+</div>
+
+
+<div *ngIf="!userTweets">
+    This user does not have any tweets yet!
+</div>

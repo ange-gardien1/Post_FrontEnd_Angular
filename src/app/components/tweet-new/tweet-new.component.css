@@ -1,0 +1,14 @@
+textarea {
+    padding: 15px;
+    width: 400px;
+}
+
+.tweet-wrap {
+    position: relative;
+}
+
+button {
+    margin: 0 20px;
+    position: absolute;
+    bottom: 3px;
+}

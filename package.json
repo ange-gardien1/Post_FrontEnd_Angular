@@ -1,5 +1,5 @@
 {
-  "name": "coffee-client",
+  "name": "tweeter-client",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

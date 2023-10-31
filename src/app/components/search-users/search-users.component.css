@@ -1,0 +1,22 @@
+button {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.user {
+    margin: 15px 0;
+    padding: 15px;
+    border: 3px solid #EF476F;
+    border-radius: 15px;
+}
+
+a {
+    color: #06D6A0;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

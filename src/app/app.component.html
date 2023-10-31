@@ -1,9 +1,17 @@
 <nav role="navigation">
-    <a routerLink="/signup" title="Sign Up">Sign Up</a>
-    <span> | </span>
-    <a routerLink="/signin" title="Sign In">Sign In</a>
-    <span> | </span>
-    <a routerLink="/coffee" title="Coffee">Coffee</a>
-    <hr>
+    <div class="logo">
+        <img src="assets/tweeter.png">
+        <a routerLink="/" class="home">tweeter</a>
+    </div>
+    <div class="nav-links">
+        <a *ngIf="!isLoggedIn" routerLink="/signup" title="Sign Up">Sign Up</a>
+        <a *ngIf="!isLoggedIn" routerLink="/signin" title="Sign In">Sign In</a>
+        <a *ngIf="isLoggedIn" routerLink="/profile" title="Profile">Welcome, {{username}}!</a>
+        <span *ngIf="isLoggedIn" (click)="logout()">Logout</span>
+        <a routerLink="/tweets" title="Tweets">All Tweets</a>
+        <a routerLink="/search" title="Search Users">Search Users</a>
+    </div>
 </nav>
-<router-outlet></router-outlet>
+<main>
+    <router-outlet></router-outlet>
+</main>

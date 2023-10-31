@@ -1,0 +1,53 @@
+nav {
+    background-color: #ef476f;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Yeseva One', cursive;
+    font-size: 32px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logo a {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.logo a:visited, .logo a:hover {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    border: none;
+}
+
+a,a:visited, .nav-links span {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+a:hover, .nav-links span:hover {
+    color: #ffd166;
+    border-bottom: 1px solid #ffd166;
+    cursor: pointer;
+}
+
+.nav-links a, .nav-links span {
+    margin: 0 20px;
+}
+
+.nav-links {
+    display: block;
+    margin: 10px;
+}
+
+main {
+    padding: 30px 50px;
+}

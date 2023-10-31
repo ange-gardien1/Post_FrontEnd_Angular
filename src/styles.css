@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.special-font {
+    font-family: 'Yeseva One', cursive;
+}
+
+button {
+    font-size: 16px;
+    background-color: #ef476f;
+    border: #CC123D;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-family: 'Yeseva One', cursive;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #CC123D;
+}
+
+input, textarea {
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #073b4c;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+}

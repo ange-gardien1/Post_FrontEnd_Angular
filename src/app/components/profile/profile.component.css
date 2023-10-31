@@ -1,0 +1,9 @@
+p {
+    font-weight: normal;
+}
+
+p span {
+    font-weight: bold;
+    display: inline-block;
+    width: 150px;
+}

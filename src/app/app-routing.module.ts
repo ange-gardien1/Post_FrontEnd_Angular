@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CoffeeListComponent } from './components/coffee-list/coffee-list.component';
-import { CoffeeNewComponent } from './components/coffee-new/coffee-new.component';
+import { NewTweetComponent } from './components/tweet-new/tweet-new.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AllTweetsComponent } from './components/all-tweets/all-tweets.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { EditTweetComponent } from './components/edit-tweet/edit-tweet.component';
+import { SearchUsersComponent } from './components/search-users/search-users.component';
 
 const routes: Routes = [
   { 
     path: "",
-    redirectTo: "/signin",
+    redirectTo: "/tweets",
     pathMatch: "full"
   },
   {
@@ -20,13 +23,29 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path: "coffee",
-    component: CoffeeListComponent
+    path: "tweets",
+    component: AllTweetsComponent
   },
   {
-    path: "coffee/new",
-    component: CoffeeNewComponent
+    path: "tweet/new",
+    component: NewTweetComponent
   },
+  {
+      path: "profile/:id",
+      component: ProfileComponent
+  },
+  {
+      path: "profile",
+      component: ProfileComponent
+  },
+  {
+      path: "edit/:id",
+      component: EditTweetComponent
+  },
+  {
+      path: "search",
+      component: SearchUsersComponent
+  }
 ];
 
 @NgModule({

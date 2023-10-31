@@ -1,0 +1,7 @@
+<h1 class="special-font">Tweet Feed</h1>
+
+<div class="new-tweet">
+    <app-tweet-new (tweetCreated)="refreshFeed()"></app-tweet-new>
+</div>
+
+<app-tweet-list [tweetList]="tweetList"></app-tweet-list>

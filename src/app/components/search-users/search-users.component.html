@@ -1,0 +1,17 @@
+<h1 class="special-font">Search Users</h1>
+
+<input type="text" [(ngModel)]="searchText">
+
+<button (click)="search()">Search</button>
+
+<div *ngIf="users.length > 0">
+    <div class="user" *ngFor="let u of users">
+        <h3>{{u.username}}</h3>
+        <p>{{u.firstName}} {{u.lastName}}</p>
+        <p><a routerLink="/profile/{{u.userId}}">View Profile</a></p>
+    </div>
+</div>
+
+<div *ngIf="users.length == 0 && noResults">
+    <p>No matching users</p>
+</div>

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
 
-  newUser: User = new User();
+  newUser: User = new User({});
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -19,7 +19,6 @@ export class SignUpComponent implements OnInit {
 
   signUp() {
     this.userService.signUp(this.newUser).subscribe(() => {
-        window.alert("User Registered Successfully");
         this.router.navigate(['signin']);
     }, error => {
         window.alert("User Registration Error");

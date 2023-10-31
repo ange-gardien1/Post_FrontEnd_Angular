@@ -1,0 +1,10 @@
+<form (ngSubmit)="addTweet()" *ngIf="isLoggedIn">
+    <div class="tweet-wrap">
+        <textarea placeholder="New tweet" type="text" name="message" [(ngModel)]="newTweet.message">
+        </textarea>
+    
+        <button>
+            Post!
+        </button>
+    </div>
+</form>

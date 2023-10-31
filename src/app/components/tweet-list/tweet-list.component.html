@@ -1,0 +1,10 @@
+<div *ngIf="tweetList">
+    <div *ngFor="let tweet of tweetList" class="tweet">
+        <p class="message">{{tweet.message}}</p>
+        <p class="details"><a routerLink="/profile/{{tweet.user?.userId}}">{{tweet.user?.username}}</a>, {{tweet.createdOn}}</p>
+        <div class="action-wrapper" *ngIf="canEdit">
+            <a class="tweet-action" routerLink="/edit/{{tweet.tweetId}}">Edit</a>
+            <a class="delete-tweet tweet-action" (click)="deleteTweet(tweet.tweetId)">Delete</a>
+        </div>
+    </div>
+</div>

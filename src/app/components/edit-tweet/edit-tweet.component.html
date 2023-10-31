@@ -1,0 +1,10 @@
+<form (ngSubmit)="updateTweet()">
+    <div class="tweet-wrap" *ngIf="tweet">
+        <textarea type="text" name="message" [(ngModel)]="tweet.message">
+        </textarea>
+    
+        <button>
+            Update
+        </button>
+    </div>
+</form>
